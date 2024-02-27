@@ -1,7 +1,6 @@
 package nay.kirill.columnchart.model
 
 import androidx.annotation.IntRange
-import kotlin.random.Random
 
 data class Item(
     val value: Int,
@@ -9,6 +8,6 @@ data class Item(
 )
 
 val mockData: List<Item>
-    get() = List(6) {
-        Item(Random(it).nextInt(15), it)
+    get() = List(7) {
+        Item((0..10).random(), it)
     }
