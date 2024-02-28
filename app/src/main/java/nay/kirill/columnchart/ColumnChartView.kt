@@ -78,8 +78,8 @@ class ColumnChartView @JvmOverloads constructor(
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
-        minLevelY = height - textPaint.fontSize() - dateTopPadding - textPaint.medium()
-        maxLevelY = textPaint.medium()
+        minLevelY = height - dayOfWeekPaint.fontSize() - dateTopPadding
+        maxLevelY = -textPaint.ascent()
 
         chartItemWidth = (width - levelStartPadding) / items.size.toFloat()
     }
