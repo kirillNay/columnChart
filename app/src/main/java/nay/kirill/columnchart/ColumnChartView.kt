@@ -61,17 +61,27 @@ class ColumnChartView @JvmOverloads constructor(
 
     private val dateTopPadding: Float = resources.getDimension(R.dimen.column_chart_date_top_padding)
 
-    private val maxLevelY: Float get() = textPaint.medium()
-    private val minLevelY: Float get() = height - textPaint.fontSize() - dateTopPadding - textPaint.medium()
+    private var maxLevelY: Float = 0F
+    private var minLevelY: Float = 0F
 
     private fun levelY(value: Int): Float {
         val levelRate = value / items.maxOf { it.value }.toFloat()
         return minLevelY - (minLevelY - maxLevelY) * levelRate
     }
 
+    private var chartItemWidth: Float = 0F
+
     private fun barX(number: Int): Float {
-        val chartItemWidth = (width - levelStartPadding) / items.size.toFloat()
         return levelStartPadding + chartItemWidth * number + chartItemWidth / 2
+    }
+
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+
+        minLevelY = height - textPaint.fontSize() - dateTopPadding - textPaint.medium()
+        maxLevelY = textPaint.medium()
+
+        chartItemWidth = (width - levelStartPadding) / items.size.toFloat()
     }
 
     private val bars: Map<Item, RectF> by lazy {
