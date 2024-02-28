@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ColumnChart</string>
+    <string-array name="dayOfWeek">
+        <item>Пн</item>
+        <item>Вт</item>
+        <item>Ср</item>
+        <item>Чт</item>
+        <item>Пт</item>
+        <item>Сб</item>
+        <item>Вс</item>
+    </string-array>
 </resources>

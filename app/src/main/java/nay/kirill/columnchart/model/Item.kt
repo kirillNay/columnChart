@@ -9,5 +9,5 @@ data class Item(
 
 val mockData: List<Item>
     get() = List(7) {
-        Item((0..10).random(), it)
+        Item((2..10).random(), it)
     }
