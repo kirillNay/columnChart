@@ -3,4 +3,6 @@
 
 ### Пример готового варианта
 
-![image](https://github.com/kirillNay/columnChart/assets/56832972/ebe4dcbb-ba6f-430a-a6b1-6a6d8bae885a)
+Готовый вариант можно посмотреть в ветке [develop](https://github.com/kirillNay/columnChart/blob/develop/app/src/main/java/nay/kirill/columnchart/ColumnChartView.kt).
+
+<img src="https://github.com/kirillNay/columnChart/assets/56832972/a73c2da0-48c4-4dfa-9b04-464addfee0d6" width="400">
